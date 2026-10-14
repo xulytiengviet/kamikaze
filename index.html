@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kameyoko — Kamehameha Camera</title>
+    <title>Kamikaze — Studio tương tác camera</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2740%27 fill=%27%233aa0ff%27/%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2720%27 fill=%27white%27/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,33 +17,34 @@
 
     <div id="start">
       <div class="card">
-        <h1>KAMEYOKO</h1>
-        <p class="tag">Fire a Kamehameha with your body. Duel a friend in a beam struggle.</p>
+        <div class="eyebrow">TRẢI NGHIỆM CAMERA · 3D TƯƠNG TÁC</div>
+        <h1>KAMIKAZE</h1>
+        <p class="tag">Điều khiển hiệu ứng năng lượng 3D bằng tư thế cơ thể. Chơi một mình hoặc thi đấu cùng bạn bè, trực tiếp trong trình duyệt.</p>
         <ol class="steps">
-          <li><b>Stance</b> — stand ~2 m back, feet wide, knees bent (power bonus).</li>
-          <li><b>KA-ME-HA-ME…</b> — cup both hands together and pull them back to your hip. Hold to charge.</li>
-          <li><b>HA!</b> — thrust both arms forward, wrists together, palms open.</li>
-          <li><b>Duel</b> — two players stand left &amp; right. When beams collide, <b>pump your arms</b> to win the struggle.</li>
+          <li><b>Chuẩn bị</b> — đứng cách camera khoảng 2 m, đủ sáng và thấy rõ hai tay.</li>
+          <li><b>Tích năng lượng</b> — khép hai bàn tay và kéo về gần hông; giữ để tích lực.</li>
+          <li><b>Phóng năng lượng</b> — duỗi mạnh hai tay ra phía trước, giữ hai cổ tay gần nhau.</li>
+          <li><b>Đấu hai người</b> — đứng bên trái và phải khung hình; đẩy tay theo nhịp khi hai luồng năng lượng va chạm.</li>
         </ol>
         <div class="options">
-          <label>Pose model
+          <label>Độ chính xác
             <select id="model">
-              <option value="lite">Lite (fastest)</option>
-              <option value="full" selected>Full (balanced)</option>
-              <option value="heavy">Heavy (most accurate)</option>
+              <option value="lite">Nhẹ · nhanh nhất</option>
+              <option value="full" selected>Cân bằng</option>
+              <option value="heavy">Cao · chính xác nhất</option>
             </select>
           </label>
-          <label class="check"><input type="checkbox" id="hands" checked /> Finger tracking (palms)</label>
+          <label class="check"><input type="checkbox" id="hands" checked /> Theo dõi bàn tay</label>
         </div>
         <div class="buttons">
-          <button id="start-camera" class="primary">Start camera</button>
-          <button id="start-demo">Watch demo duel</button>
+          <button id="start-camera" class="primary">Bật camera</button>
+          <button id="start-demo">Xem mô phỏng không cần camera</button>
         </div>
-        <div id="status"></div>
+        <div id="status" role="status" aria-live="polite"></div>
+        <p class="privacy">🔒 Camera được xử lý trên thiết bị; không tải video lên máy chủ. Trình duyệt sẽ yêu cầu quyền truy cập khi bạn bấm Bật camera.</p>
         <p class="legal">
-          Unofficial fan project, not affiliated with or endorsed by Bird Studio, Shueisha, Toei Animation or
-          Bandai Namco. Dragon Ball and related names are trademarks of their respective owners.
-          <a href="THIRD_PARTY_NOTICES.txt" target="_blank" rel="noopener">Licenses</a>
+          Dự án fan phi chính thức, không liên kết hoặc được bảo trợ bởi chủ sở hữu Dragon Ball. Nhãn hiệu thuộc về các chủ sở hữu tương ứng. Long Ngo thiết kế · MIT 2026.
+          <a href="THIRD_PARTY_NOTICES.txt" target="_blank" rel="noopener">Giấy phép thành phần</a>
         </p>
       </div>
     </div>
