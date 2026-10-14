@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { defineConfig, type Plugin } from 'vite';
 
-// Ship the third-party licenses (three.js, MediaPipe) with every build; Apache-2.0 requires it.
+// Ship third-party licenses with every build.
 const thirdPartyNotices: Plugin = {
   name: 'third-party-notices',
   generateBundle() {
@@ -14,9 +14,10 @@ const thirdPartyNotices: Plugin = {
 };
 
 export default defineConfig({
+  // GitHub Pages project subpath, while keeping local development at '/'.
+  base: process.env.GITHUB_PAGES === 'true' ? '/kamikaze/' : '/',
   plugins: [thirdPartyNotices],
   server: { port: 5173, open: true },
-  // three.js + MediaPipe are large by nature.
   build: { chunkSizeWarningLimit: 1500 },
   test: { environment: 'node', include: ['tests/**/*.test.ts'] },
 } as never);
