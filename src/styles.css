@@ -518,3 +518,35 @@ button:disabled {
 .rec.show {
   display: block;
 }
+
+/* Kamikaze responsive and accessibility fixes */
+html, body { min-width: 0; }
+#start { overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; align-items: safe center; padding: clamp(12px, 3vw, 28px); }
+#start .card { margin: auto; width: min(680px, 100%); max-height: none; padding: clamp(20px, 4vw, 34px); overflow-wrap: anywhere; }
+#start .card h1 { font-size: clamp(46px, 12vw, 84px); }
+.eyebrow { color: #8fc7ff; font-size: 11px; font-weight: 800; letter-spacing: .18em; margin-bottom: 12px; }
+.privacy { margin: 12px 0 0; color: #a7badb; font-size: 12px; line-height: 1.5; }
+#start .buttons button { min-height: 48px; }
+button:focus-visible, select:focus-visible, input:focus-visible { outline: 3px solid #ffd23f; outline-offset: 3px; }
+@media (max-width: 600px) {
+  #start { display: block; padding: max(12px, env(safe-area-inset-top)) 12px max(18px, env(safe-area-inset-bottom)); }
+  #start .card { margin: 0 auto; border-radius: 16px; }
+  #start .steps { padding-left: 18px; font-size: 13px; line-height: 1.6; }
+  #start .options { display: grid; gap: 12px; }
+  #start .options select { max-width: 100%; }
+  #start .buttons { flex-direction: column; }
+  #start .buttons button { width: 100%; }
+  .panel { width: min(42vw, 200px); padding: 8px; top: 8px; }
+  .panel.p1 { left: 8px; } .panel.p2 { right: 8px; }
+  .panel-head { font-size: 18px; }
+  .checks { font-size: 10px; }
+  .banner-main { font-size: clamp(28px, 8vw, 56px); white-space: normal; }
+  .hint { bottom: max(16px, env(safe-area-inset-bottom)); width: calc(100vw - 24px); }
+}
+@media (max-height: 650px) {
+  #start { place-items: start center; }
+  #start .card { margin: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #start *, #hud * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
